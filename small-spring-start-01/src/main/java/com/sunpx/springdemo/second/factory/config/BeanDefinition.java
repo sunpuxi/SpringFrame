@@ -2,7 +2,7 @@ package com.sunpx.springdemo.second.factory.config;
 
 /**
  * Bean 的定义
- * 相当于在对象的外面包了一层，Bean 不是实例化对象！
+ * 相当于在对象的外面包了一层，Bean 不是实例化后的对象！
  */
 public class BeanDefinition {
 

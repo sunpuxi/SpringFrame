@@ -10,7 +10,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
     /**
      * 实例化 Bean 之后，并添加到单例容器中
-     * @param beanName name
+     *
+     * @param beanName       name
      * @param beanDefinition class
      * @return object
      * @throws BeansException e

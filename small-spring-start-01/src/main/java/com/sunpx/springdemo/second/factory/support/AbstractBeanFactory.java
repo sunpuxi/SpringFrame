@@ -17,13 +17,13 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         if (bean != null) {
             return bean;
         }
-
         BeanDefinition beanDefinition = getBeanDefinition(name);
         return createBean(name, beanDefinition);
     }
 
     // 获取 BeanDefinition
     protected abstract BeanDefinition getBeanDefinition(String beanName) throws BeansException;
+
     // 实例化 Bean
     protected abstract Object createBean(String beanName, BeanDefinition beanDefinition) throws BeansException;
 
