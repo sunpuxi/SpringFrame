@@ -1,22 +1,25 @@
 package com.sunpx.springdemo;
 
 
+import com.sunpx.springdemo.second.factory.config.BeanDefinition;
+import com.sunpx.springdemo.second.factory.support.DefaultListableBeanFactory;
 import org.junit.Test;
 
 public class ApiTest {
 
     @Test
-    public void testBeanFactory(){
-        // 初始化
-        BeanFactory beanFactory = new BeanFactory();
-
-        // 服务注册
-        UserService userService = new UserService();
-        BeanDefinition beanDefinition = new BeanDefinition(userService);
-        beanFactory.registerBean("UserService",beanDefinition);
-
-        // 取出服务
-        UserService userService1 = (UserService) beanFactory.getBean("UserService");
-        userService1.queryUserInfo();
+    public void test_BeanFactory(){
+        // 1.初始化 BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+        // 2.注册 bean
+        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
+        beanFactory.registerBeanDefinition("userService", beanDefinition);
+        // 3.第一次获取 bean
+        UserService userService = (UserService) beanFactory.getBean("userService");
+        userService.queryUserInfo();
+        // 4.第二次获取 bean from Singleton
+        UserService userService_singleton = (UserService) beanFactory.getBean("userService");
+        userService_singleton.queryUserInfo();
     }
+
 }

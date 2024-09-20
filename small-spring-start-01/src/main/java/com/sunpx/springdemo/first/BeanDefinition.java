@@ -1,4 +1,4 @@
-package com.sunpx.springdemo;
+package com.sunpx.springdemo.first;
 
 /**
  * Bean 的定义
